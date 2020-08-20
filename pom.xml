@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.deepinthink.puzzle.boot</groupId>
+  <artifactId>puzzle-boot-parent</artifactId>
+  <version>${revision}</version>
+  <inceptionYear>2020</inceptionYear>
+  <packaging>pom</packaging>
+  <name>${project.artifactId}</name>
+  <url>https://github.com/deepinthink-puzzle/puzzle-boot</url>
+  <description>Advanced Server framework for Game Development based on Spring Boot</description>
+  <organization>
+    <name>Puzzle</name>
+    <url>https://github.com/deepinthink-puzzle</url>
+  </organization>
+  <developers>
+    <developer>
+      <id>tys</id>
+      <name>Tingyan Shen</name>
+      <email>tingyan.shen@gmail.com</email>
+      <roles>
+        <role>Leader</role>
+        <role>Developer</role>
+      </roles>
+    </developer>
+  </developers>
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <issueManagement>
+    <system>GitHub</system>
+    <url>https://github.com/deepinthink-puzzle/puzzle-boot/issues</url>
+  </issueManagement>
+
+  <modules>
+    <module>puzzle-boot</module>
+    <module>puzzle-boot-autoconfigure</module>
+    <module>puzzle-boot-starters</module>
+  </modules>
+
+  <properties>
+    <revision>0.0.1-SNAPSHOT</revision>
+    <spring-boot.version>2.2.6.RELEASE</spring-boot.version>
+    <junit.version>4.12</junit.version>
+    <java.version>1.8</java.version>
+    <file.encoding>UTF-8</file.encoding>
+    <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+    <project.build.sourceEncoding>${file.encoding}</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>${file.encoding}</project.reporting.outputEncoding>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>${spring-boot.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>${junit.version}</version>
+        <scope>test</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven-compiler-plugin.version}</version>
+        <configuration>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+          <encoding>${file.encoding}</encoding>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
